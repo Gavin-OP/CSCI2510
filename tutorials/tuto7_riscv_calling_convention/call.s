@@ -25,10 +25,13 @@ g:
 	.globl	f
 	.type	f, @function
 f:
+    # prolouge
 	addi	sp,sp,-64
 	sd	ra,56(sp)
 	sd	s0,48(sp)
 	addi	s0,sp,64
+    # end of prolouge
+
 	sd	a0,-40(s0)
 	sd	a1,-48(s0)
 	sd	a2,-56(s0)
@@ -43,11 +46,14 @@ f:
 	ld	a4,-24(s0)
 	ld	a5,-32(s0)
 	add	a5,a4,a5
+
+    # epilouge
 	mv	a0,a5
 	ld	ra,56(sp)
 	ld	s0,48(sp)
 	addi	sp,sp,64
 	jr	ra
+    # end of epilouge
 	.size	f, .-f
 	.align	1
 	.globl	main
