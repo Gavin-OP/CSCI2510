@@ -44,11 +44,13 @@ pow_nonzero_exp:
     # And then branch to pow_even or pow_odd according to the value of (exponent/2)
     # reference lines of code: 5
     ### YOUR CODE HERE
-    srli  a1,a1,1           # a1 = exponent / 2
+    srai  a1,a1,1           # a1 = exponent / 2
                             # a1 is originally used to store parameter from caller, exponent
     call  pow               # calculate pow(base, exponent / 2)
-    ld    a1,-24(s0)        # load parameter from caller, base
-    srai  a1,a1,1           # a1 = exponent % 2
+    ld    a1,-24(s0)        # load exponent from caller
+    srai  a2,a1,1           # a2 = exponent / 2
+    slli  a2,a2,1           # a2 = a2 * 2
+    sub   a1,a1,a2          # a2 = exponent - (exponent / 2) * 2
 
     beq   a1,zero,pow_even
 
@@ -57,11 +59,11 @@ pow_odd:
     # reference lines of code: 3
     ### YOUR CODE HERE
     mul   a0,a0,a0          # a0 = half * half
-    ld    a1,-24(s0)        # load parameter from caller, base
+    ld    a1,-32(s0)        # load base from caller
     mul   a0,a0,a1          # a0 = half * half * base
     
-    
     j     pow_return
+
 pow_even:
     # Here corresponds to the Line 11 of C code example.
     # reference lines of code: 1
@@ -127,8 +129,8 @@ main:
     addi  s0,sp,16
 
     # check whether pow(2, 5) gives 32
-    li    a2,32
-    li    a1,5
+    li    a2,1
+    li    a1,0
     li    a0,2
     call  check
     # more test cases ...
@@ -149,3 +151,6 @@ main:
     addi  sp,sp,16
     jr    ra
     .size    main, .-main
+
+
+
