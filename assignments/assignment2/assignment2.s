@@ -7,26 +7,37 @@ error_msg:
     .align 1
     .globl pow
     .type  pow, @function
+
 pow:
     # long pow(long base, long exponent)
     # Here, you should implement the PROLOGUE for calling pow()
     # reference lines of code: 4
     ### YOUR CODE HERE
+    addi  sp,sp,-40         # move stack pointer up for 5 words, ra, s0, base, exponent, alignment
+    sd    ra,32(sp)         # save return address
+    sd    s0,24(sp)         # save s0, old frame pointer
+    addi  s0,sp,40          # set new frame pointer
     
     # Here, you are recommended to store two variables (base & exponent) 
     # in proper place of the stack
     # reference lines of code: 2
     ### YOUR CODE HERE
+    sd   a0,-32(s0)         # store parameter from caller, base
+    sd   a1,-24(s0)         # store parameter from caller, exponent
     
     bne   a1,zero,pow_nonzero_exp
+
 pow_zero_exp:
     # Here corresponds to the branch condition that current exponent is zero.
     # You can refer to the Line 5 of C code example.
     # Note: Here is the end of recursion and should return a value.
     # reference lines of code: 1
     ### YOUR CODE HERE
+    li    a0,1              # a0 is originally used to store parameter from caller, base
+                            # now it is used to store return value 1
 
     j     pow_return
+
 pow_nonzero_exp:
     # Here corresponds to the branch condition that current exponent is not zero.
     # Calculate pow(base, exponent / 2)
@@ -50,6 +61,10 @@ pow_return:
     # Here, you should implement the EPILOGUE for calling pow()
     # reference lines of code: 4
     ### YOUR CODE HERE
+    ld    ra,32(sp)         # restore return address
+    ld    s0,24(sp)         # restore s0, old frame pointer
+    addi  sp,sp,40          # move stack pointer down for 5 words, delete ra, s0, base, exponent, alignment
+    jr    ra                # return to caller
 
     .size pow, .-pow
 
