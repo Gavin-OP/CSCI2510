@@ -13,10 +13,10 @@ pow:
     # Here, you should implement the PROLOGUE for calling pow()
     # reference lines of code: 4
     ### YOUR CODE HERE
-    addi  sp,sp,-40         # move stack pointer up for 5 words, ra, s0, base, exponent, alignment
-    sd    ra,32(sp)         # save return address
-    sd    s0,24(sp)         # save s0, old frame pointer
-    addi  s0,sp,40          # set new frame pointer
+    addi  sp,sp,-48         # move stack pointer up for 6 words, ra, s0, base, exponent, alignment
+    sd    ra,40(sp)         # save return address
+    sd    s0,32(sp)         # save s0, old frame pointer
+    addi  s0,sp,48          # set new frame pointer
     
     # Here, you are recommended to store two variables (base & exponent) 
     # in proper place of the stack
@@ -47,9 +47,7 @@ pow_nonzero_exp:
     srli  a1,a1,1           # a1 = exponent / 2
                             # a1 is originally used to store parameter from caller, exponent
     call  pow               # calculate pow(base, exponent / 2)
-    addi  sp,sp,-8          # move stack pointer up for 1 word, store return value from pow
-    sd    a0,0(sp)          # store return value from pow, which is half
-    slli  a1,a1,1           # a1 = a1 * 2
+    ld    a1,-24(s0)        # load parameter from caller, base
     srai  a1,a1,1           # a1 = exponent % 2
 
     beq   a1,zero,pow_even
@@ -58,9 +56,8 @@ pow_odd:
     # Here corresponds to the Line 9 of C code example.
     # reference lines of code: 3
     ### YOUR CODE HERE
-    ld    a0,0(sp)          # load return value from pow, which is half
     mul   a0,a0,a0          # a0 = half * half
-    ld    a1,-32(s0)        # load parameter from caller, base
+    ld    a1,-24(s0)        # load parameter from caller, base
     mul   a0,a0,a1          # a0 = half * half * base
     
     
@@ -69,16 +66,15 @@ pow_even:
     # Here corresponds to the Line 11 of C code example.
     # reference lines of code: 1
     ### YOUR CODE HERE
-    ld    a0,0(sp)          # load return value from pow, which is half
     mul   a0,a0,a0          # a0 = half * half
 
 pow_return:
     # Here, you should implement the EPILOGUE for calling pow()
     # reference lines of code: 4
     ### YOUR CODE HERE
-    ld    ra,32(sp)         # restore return address
-    ld    s0,24(sp)         # restore s0, old frame pointer
-    addi  sp,sp,40          # move stack pointer down for 5 words, delete ra, s0, base, exponent, alignment
+    ld    ra,40(sp)         # restore return address
+    ld    s0,32(sp)         # restore s0, old frame pointer
+    addi  sp,sp,48          # move stack pointer down for 5 words, delete ra, s0, base, exponent, alignment
     jr    ra                # return to caller
 
     .size pow, .-pow
