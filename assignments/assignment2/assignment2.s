@@ -129,8 +129,8 @@ main:
     addi  s0,sp,16
 
     # check whether pow(2, 5) gives 32
-    li    a2,1
-    li    a1,0
+    li    a2,32
+    li    a1,5
     li    a0,2
     call  check
     # more test cases ...
