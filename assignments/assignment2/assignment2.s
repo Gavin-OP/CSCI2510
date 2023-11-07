@@ -44,8 +44,15 @@ pow_nonzero_exp:
     # And then branch to pow_even or pow_odd according to the value of (exponent/2)
     # reference lines of code: 5
     ### YOUR CODE HERE
+    div   a1,a1,2           # a1 is originally used to store parameter from caller, exponent
+                            # now it is used to store exponent / 2
+    call  pow               # calculate pow(base, exponent / 2)
+    addi  sp,sp,-8          # move stack pointer up for 1 word, store return value from pow
+    sd    a0,0(sp)          # store return value from pow, which is half
+    ld    a1,-24(s0)        # restore old exponent
     
     beq   a1,zero,pow_even
+
 pow_odd:
     # Here corresponds to the Line 9 of C code example.
     # reference lines of code: 3
