@@ -7,17 +7,17 @@
     - Initialize Ubuntu
     - Run the following commands  
 
-    ```
-    sudo apt update
+        ```
+        sudo apt update
 
-    sudo apt install zstd autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libboost-all-dev device-tree-compiler
+        sudo apt install zstd autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libboost-all-dev device-tree-compiler
 
-    wget --no-check-certificate https://www.cse.cuhk.edu.hk/~mcyang/csci2510/riscv/riscv-linux-amd64.tar.zst
+        wget --no-check-certificate https://www.cse.cuhk.edu.hk/~mcyang/csci2510/riscv/riscv-linux-amd64.tar.zst
 
-    sudo tar axvf riscv-linux-amd64.tar.zst -C /opt
+        sudo tar axvf riscv-linux-amd64.tar.zst -C /opt
 
-    sudo chown -R $(whoami) /opt/riscv
-    ```
+        sudo chown -R $(whoami) /opt/riscv
+        ```
 
 ## Meaning of Pseudo Code
 
@@ -41,15 +41,15 @@
 
 - Compile the program  
 
-```Shell
-/opt/riscv/bin/riscv64-unknown-linux-musl-gcc -static -no-pie -o hello hello.s
-```
+    ```Shell
+    /opt/riscv/bin/riscv64-unknown-linux-musl-gcc -static -no-pie -o hello hello.s
+    ```
 
 - Run the program  
 
-```Shell
-/opt/riscv/bin/spike /opt/riscv/riscv64-unknown-linux-musl/bin/pk hello
-```
+    ```Shell
+    /opt/riscv/bin/spike /opt/riscv/riscv64-unknown-linux-musl/bin/pk hello
+    ```
 
 ## Debug Mode Instructions[^1]
 
@@ -57,25 +57,25 @@
 
 - Install package using commands below (only once)  
 
-```
-sudo apt-get install libdebuginfod-dev
-```
+    ```
+    sudo apt-get install libdebuginfod-dev
+    ```
 
 - Compile the program  
 
-```Shell
-/opt/riscv/bin/riscv64-unknown-linux-musl-gcc -static -no-pie -o hello hello.s
-```
+    ```Shell
+    /opt/riscv/bin/riscv64-unknown-linux-musl-gcc -static -no-pie -o hello hello.s
+    ```
 
 - Disassemble the executable
 
-```Shell
-/opt/riscv/bin/riscv64-unknown-linux-musl-objdump -D hello >> hello.temp
-```
+    ```Shell
+    /opt/riscv/bin/riscv64-unknown-linux-musl-objdump -D hello >> hello.temp
+    ```
 
 - Enter debug mode  
 
-```Shell
-/opt/riscv/bin/spike -d /opt/riscv/riscv64-unknown-linux-musl/bin/pk hello
-```
+    ```Shell
+    /opt/riscv/bin/spike -d /opt/riscv/riscv64-unknown-linux-musl/bin/pk hello
+    ```
 
