@@ -91,7 +91,7 @@
     
     - `until pc 0 1023e`: run the program until the program counter to line 1023e[^2]
 
-[^2]: `1023e` are the line number of the start of `main` label, which can be check by searching `main` in the `hello.temp` file  
+    [^2]: `1023e` are the line number of the start of `main` label, which can be check by searching `main` in the `hello.temp` file   
     
     - `reg 0 a0`: see the contents of register a0 in core 0  
 
