@@ -1,4 +1,4 @@
-# csci2510
+# CSCI2510 Cheatsheet
 
 The repo contains all the codes exercises and notes during lectures, tutorials, and assignments. All of the commands are based on RISC-V. 
 
@@ -47,6 +47,11 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 | bgeu        |                           |                                                              |
 | jal         | jal a0, branch_label      | jump to branch_label and store return address in `a0`        |
 | jalr        | jalr a0, a1, branch_label | jump to branch_label + `a1` and store return address in `a0` |
+| j           | j branch_label            | jump to branch_label without saving return address           |
+| jr          | jr a0                     | jump to address inside `a0` without saving return address    |
+| call        | call branch_label         | jump to branch_label and store the return address in `ra`    |
+
+
 
 ## Special Purpose Registers  
 
@@ -129,4 +134,4 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 
     - `mem 0 2020`: see the contents of memory address of `2020` in core 0[^3]  
 
-[^3]: for the address of the first element in an array, it can be derive by concatenating `0x00000000000` with the address shown in the `hello.temp` file. E.g. if the file shows that `# 10024 <array>`, then the address of the first element in the array is `0x0000000000010024`  
+^3]: for the address of the first element in an array, it can be derive by concatenating `0x00000000000` with the address shown in the `hello.temp` file. E.g. if the file shows that `# 10024 <array>`, then the address of the first element in the array is `0x0000000000010024`  
