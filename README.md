@@ -1,5 +1,7 @@
 # csci2510
 
+The repo contains all the codes exercises and notes during lectures, tutorials, and assignments. All of the commands are based on RISC-V. 
+
 ## RISC-V Environment Setup
 
 - Windows
@@ -21,28 +23,38 @@
 
 ## Meaning of Pseudo Code
 
-| Pseudo Code | Example                   | Meaning                                                 |
-|-------------|---------------------------|---------------------------------------------------------|
-| li          | `li a0, 1`                | load inmmediates 1 into `a0`                            |
-| mv          | `mv a2, a0`               | move the value `a0` into `a2`                           |
-| lw          | `lw t1, (t0)`             | load content in the address `t0` into `t1`              |
-| sw          | `sw t1, (t0)`             | store value of `t1` into address `t0`                   |
-| la          | `la t0, array`            | load the address of the first elements in array in `t0` |
-| sd          |                           |                                                         |
-| add         | `add a4, a3, a2`          | `a4` = `a3` + `a2`                                      |
-| sub         | `sub a4, a3, a2`          | `a4` = `a3` - `a2`                                      |
-| mul         | `mul a4, a3, a2`          | `a4` = `a3` * `a2`                                      |
-| div         | `div a4, a3, a2`          | `a4` = `a3` / `a2`                                      |
-| rem         | `rem a4, a3, a2`          | `a4` = `a3` % `a2`                                      |
-| and         | `and a4, a3, a2`          | `a4` = `a3` and  `a2`                                   |
-| or          | 'or a4, a3, a2`           | `a4` = `a3` or  `a2`                                    |
-| xor         |                           |                                                         |
-| beq         | beq, a0, a1, branch_label | if `a0` = `a1`, go to branch_label                      |
-| bnq         | bnq, a0, a1, branch_label | if `a0` $\ne$ `a1`, go to branch_label                  |
-| blt         | blt, a0, a1, branch_label | if `a0` < `a1`, go to branch_label                      |
-| bge         | bge, a0, a1, branch_label | if `a0` $\ge$ `a1`, go to branch_label                  |
-| bltu        |                           |                                                         |
-| bgeu        |                           |                                                         |
+| Pseudo Code | Example                   | Meaning                                                      |
+|-------------|---------------------------|--------------------------------------------------------------|
+| li          | `li a0, 1`                | load inmmediates 1 into `a0`                                 |
+| mv          | `mv a2, a0`               | move the value `a0` into `a2`                                |
+| lw          | `lw t1, (t0)`             | load content in the address `t0` into `t1`                   |
+| sw          | `sw t1, (t0)`             | store value of `t1` into address `t0`                        |
+| la          | `la t0, array`            | load the address of the first elements in array in `t0`      |
+| sd          |                           |                                                              |
+| add         | `add a4, a3, a2`          | `a4` = `a3` + `a2`                                           |
+| sub         | `sub a4, a3, a2`          | `a4` = `a3` - `a2`                                           |
+| mul         | `mul a4, a3, a2`          | `a4` = `a3` * `a2`                                           |
+| div         | `div a4, a3, a2`          | `a4` = `a3` / `a2`                                           |
+| rem         | `rem a4, a3, a2`          | `a4` = `a3` % `a2`                                           |
+| and         | `and a4, a3, a2`          | `a4` = `a3` and  `a2`                                        |
+| or          | 'or a4, a3, a2`           | `a4` = `a3` or  `a2`                                         |
+| xor         |                           |                                                              |
+| beq         | beq, a0, a1, branch_label | if `a0` = `a1`, go to branch_label                           |
+| bnq         | bnq, a0, a1, branch_label | if `a0` $\ne$ `a1`, go to branch_label                       |
+| blt         | blt, a0, a1, branch_label | if `a0` < `a1`, go to branch_label                           |
+| bge         | bge, a0, a1, branch_label | if `a0` $\ge$ `a1`, go to branch_label                       |
+| bltu        |                           |                                                              |
+| bgeu        |                           |                                                              |
+| jal         | jal a0, branch_label      | jump to branch_label and store return address in `a0`        |
+| jalr        | jalr a0, a1, branch_label | jump to branch_label + `a1` and store return address in `a0` |
+
+## Special Purpose Registers  
+
+| Register    | Meaning                                |
+|-------------|----------------------------------------|
+| `sp`        | point to top of stack (lowest address) |
+| `s0` / `fp` | frame pointer                          |
+| `ra`        | return address                         |
 
 
 ## Execution Instructions[^1]
@@ -58,6 +70,26 @@
     ```Shell
     /opt/riscv/bin/spike /opt/riscv/riscv64-unknown-linux-musl/bin/pk hello
     ```
+
+- Generate executable program
+
+    - Preprocessed file (`xx.i`) 
+
+        ```
+        /opt/riscv/bin/riscv64-unknown-linux-musl-gcc -E hello5.c -o hello5.i
+        ```
+    
+    - Compilation Assembly language file (`xxx.s`)
+
+        ```
+        /opt/riscv/bin/riscv64-unknown-linux-musl-gcc -S -O0 hello5.i (or hello5.c) -o hello5.s
+        ```
+    
+    - Generate object file (`xxx.o`)
+    
+        ```
+        /opt/riscv/bin/riscv64-unknown-linux-musl-gcc -c hello5.s -o hello5.o
+        ```
 
 ## Debug Mode Instructions[^1]
 
