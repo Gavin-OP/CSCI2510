@@ -5,7 +5,7 @@
 The repo contains all the codes exercises and notes during lectures, tutorials, and assignments for CUHK CSCI2510 Computer Organization. All of the commands are based on RISC-V. 
 
 ## Table of Contents
-- [RISC-V Environment Setup](#RISC-V Environment Setup)
+- [RISC-V Environment Setup](#risc-v-environment-setup)
 - [Meaning of Pseudo Code](#Meaning of Pseudo Code)
 - [Special Purpose Registers](#Special Purpose Registers)
 - [Execution Instructions](#Execution Instructions[^1])
