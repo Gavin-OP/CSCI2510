@@ -11,7 +11,7 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 - [Execution Instructions](#execution-instructions1)
 - [Debug Mode Instructions](#debug-mode-instructions1)
 - [To Do](#to-do)
-- [Licence](#licence)
+- [License](#license)
 
 ## RISC-V Environment Setup
 
@@ -40,7 +40,7 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 | mv          | `mv a2, a0`               | move the value `a0` into `a2`                                |
 | lw          | `lw t1, (t0)`             | load content in the address `t0` into `t1`                   |
 | sw          | `sw t1, (t0)`             | store value of `t1` into address `t0`                        |
-| la          | `la t0, array`            | load the address of the first elements in array in `t0`      |
+| la          | `la t0, array`            | load the address of the first elements in an array in `t0`      |
 | sd          |                           |                                                              |
 | add         | `add a4, a3, a2`          | `a4` = `a3` + `a2`                                           |
 | sub         | `sub a4, a3, a2`          | `a4` = `a3` - `a2`                                           |
@@ -139,17 +139,17 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
     
     - `until pc 0 1023e`: run the program until the program counter to line 1023e[^2]
 
-    [^2]: `1023e` are the line number of the start of `main` label, which can be check by searching `main` in the `hello.temp` file   
+    [^2]: `1023e` is the line number of the start of `main` label, which can be checked by searching `main` in the `hello.temp` file   
     
     - `reg 0 a0`: see the contents of register a0 in core 0  
 
-    - `mem 0 2020`: see the contents of memory address of `2020` in core 0[^3]  
+    - `mem 0 2020`: see the contents of the memory address of `2020` in core 0[^3]  
 
-[^3]: for the address of the first element in an array, it can be derive by concatenating `0x00000000000` with the address shown in the `hello.temp` file. E.g. if the file shows that `# 10024 <array>`, then the address of the first element in the array is `0x0000000000010024`  
+[^3]: the address of the first element in an array, it can be derived by concatenating `0x00000000000` with the address shown in the `hello.temp` file. E.g. if the file shows that `# 10024 <array>`, then the address of the first element in the array is `0x0000000000010024`  
   
 ## To Do
 - [ ] Tutorial 8, 9, 10. Read PPT. Implement the code. 
 - [ ] Assignment 3 Bonus Question. Implement the code. 
 
-## Licence
+## License
 
