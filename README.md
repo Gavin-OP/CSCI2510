@@ -4,7 +4,7 @@
 
 Ubuntu setup and CUHK CSCI2510 2023Fall code implementation.  
   
-The repo contains all the codes exercises and notes during lectures, tutorials, and assignments for CUHK CSCI2510 Computer Organization. All of the commands are based on RISC-V. 
+The repo contains all the codes exercises and notes during lectures, tutorials, and assignments for CUHK CSCI2510 Computer Organization. All of the commands are based on RISC-V and implemented in Ubuntu. 
 
 ## Table of Contents
 - [RISC-V Environment Setup](#risc-v-environment-setup)
