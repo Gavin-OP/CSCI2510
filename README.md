@@ -36,7 +36,7 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
         ```
     - Run the following command to clone the repo
         ```shell
-        git clone https://github.com/Gavin-OP/csci2510.git
+        git clone https://github.com/Gavin-OP/CSCI2510.git
         ```
 
 ## Meaning of Pseudo Code
