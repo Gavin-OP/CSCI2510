@@ -6,9 +6,9 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 
 ## Table of Contents
 - [RISC-V Environment Setup](#risc-v-environment-setup)
-- [Meaning of Pseudo Code](#Meaning of Pseudo Code)
-- [Special Purpose Registers](#Special Purpose Registers)
-- [Execution Instructions](#Execution Instructions[^1])
+- [Meaning of Pseudo Code](#meaning-of-pseudo-code)
+- [Special Purpose Registers](#special-purpose-registers)
+- [Execution Instructions](#execution-instructions)
 
 ## RISC-V Environment Setup
 
