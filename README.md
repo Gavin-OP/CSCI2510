@@ -1,5 +1,7 @@
 # CSCI2510 Cheatsheet
 
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)  
+
 The repo contains all the codes exercises and notes during lectures, tutorials, and assignments for CUHK CSCI2510 Computer Organization. All of the commands are based on RISC-V. 
 
 ## Table of Contents
