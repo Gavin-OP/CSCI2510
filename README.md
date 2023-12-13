@@ -7,7 +7,7 @@ Ubuntu setup and CUHK CSCI2510 2023Fall code implementation.
 The repo contains all the codes exercises and notes during lectures, tutorials, and assignments for CUHK CSCI2510 Computer Organization. All of the commands are based on RISC-V and implemented in Ubuntu. 
 
 ## Table of Contents
-- [RISC-V Environment Setup](#risc-v-environment-setup)
+- [Usage](#usage)
 - [Meaning of Pseudo Code](#meaning-of-pseudo-code)
 - [Special Purpose Registers](#special-purpose-registers)
 - [Execution Instructions](#execution-instructions1)
@@ -15,14 +15,14 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 - [To Do](#to-do)
 - [License](#license)
 
-## RISC-V Environment Setup
+## Usage
 
 - Windows
     - Download WSL, Ubuntu in Microsoft Store  
     - Initialize Ubuntu
-    - Run the following commands  
+    - Run the following commands to compile riscv   
 
-        ```
+        ```shell
         sudo apt update
 
         sudo apt install zstd autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libboost-all-dev device-tree-compiler
@@ -32,6 +32,10 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
         sudo tar axvf riscv-linux-amd64.tar.zst -C /opt
 
         sudo chown -R $(whoami) /opt/riscv
+        ```
+    - Run the following command to clone the repo
+        ```shell
+        git clone 
         ```
 
 ## Meaning of Pseudo Code
