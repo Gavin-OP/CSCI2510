@@ -13,6 +13,7 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 - [Execution Instructions](#execution-instructions1)
 - [Debug Mode Instructions](#debug-mode-instructions1)
 - [To Do](#to-do)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Usage
@@ -154,8 +155,14 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 [^3]: the address of the first element in an array, it can be derived by concatenating `0x00000000000` with the address shown in the `hello.temp` file. E.g. if the file shows that `# 10024 <array>`, then the address of the first element in the array is `0x0000000000010024`  
   
 ## To Do
+
 - [ ] Tutorial 8, 9, 10. Read PPT. Implement the code. 
 - [ ] Assignment 3 Bonus Question. Implement the code. 
 
-## License
+## Contributing  
 
+PRs are welcome.  
+Issues for materials can be raised in [issue]()
+
+## License
+[UNLICENSED]()
