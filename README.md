@@ -165,4 +165,4 @@ PRs are welcome.
 Issues for materials can be raised in [issue](https://github.com/Gavin-OP/csci2510/issues)
 
 ## License
-[UNLICENSED]()
+[UNLICENSED](./LICENSE)
