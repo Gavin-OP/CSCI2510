@@ -1,6 +1,9 @@
 # CSCI2510 Cheatsheet
 
-The repo contains all the codes exercises and notes during lectures, tutorials, and assignments. All of the commands are based on RISC-V. 
+The repo contains all the codes exercises and notes during lectures, tutorials, and assignments for CUHK CSCI2510 Computer Organization. All of the commands are based on RISC-V. 
+
+## Table of Contents
+
 
 ## RISC-V Environment Setup
 
@@ -135,3 +138,10 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
     - `mem 0 2020`: see the contents of memory address of `2020` in core 0[^3]  
 
 [^3]: for the address of the first element in an array, it can be derive by concatenating `0x00000000000` with the address shown in the `hello.temp` file. E.g. if the file shows that `# 10024 <array>`, then the address of the first element in the array is `0x0000000000010024`  
+  
+## To Do
+- [ ] Tutorial 8, 9, 10. Read PPT. Implement the code. 
+- [ ] Assignment 3 Bonus Question. Implement the code. 
+
+## Licence
+
