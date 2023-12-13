@@ -1,4 +1,4 @@
-# csci2510
+# csci2510 _(CSCI2510 Code Implementation and Ubuntu Setup)_
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)  
 
