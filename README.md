@@ -162,7 +162,7 @@ The repo contains all the codes exercises and notes during lectures, tutorials, 
 ## Contributing  
 
 PRs are welcome.  
-Issues for materials can be raised in [issue]()
+Issues for materials can be raised in [issue](https://github.com/Gavin-OP/csci2510/issues)
 
 ## License
 [UNLICENSED]()
